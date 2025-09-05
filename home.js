@@ -139,14 +139,13 @@ document.getElementById('btn-add')
         document.getElementById('add-money-modal').checked = true;
         // transaction Showing
         const data = {
-            name: "add money",
+            name: "Add money",
             date: new Date().toLocaleTimeString()
         }
         transactionData.push(data);
         console.log(transactionData)
 
     })
-
 
 // withdraw button event handler
 
