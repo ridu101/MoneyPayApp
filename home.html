@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MainPage</title>
     <link rel="shortcut icon" href="assets/733317.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
     <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -43,40 +44,42 @@
         <div class="grid grid-cols-3 gap-4 mt-10 bg-white rounded-xl p-3">
             <!--cart-1  -->
             <div id="add-money-btn"
-                class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+                class=" forms-btn  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
                 <img class="mx-auto" src="./assets/wallet1.png" alt="">
-                <p class="text-[#08080880] ">Add Money</p>
+                <p class="text-black font-semibold">Add Money</p>
 
             </div>
             <!-- cart-2 -->
             <div id="cash-out-btn"
-                class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+                class=" forms-btn  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
                 <img src="./assets/send1.png" alt="">
-                <p class="text-[#08080880]">Cashout</p>
+                <p class="text-black font-semibold">Cashout</p>
 
             </div>
             <!-- cart-3 -->
-            <div id="transfer-btn" class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+            <div id="transfer-btn"
+                class=" forms-btn  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
                 <img src="./assets/money1.png" alt="">
-                <p class="text-[#08080880]">TransferMoney</p>
+                <p class="text-black font-semibold">TransferMoney</p>
 
             </div>
             <!-- cart-4 -->
-            <div id="get-bonus-btn" class=" bg-[#f4f5f7]  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+            <div id="get-bonus-btn"
+                class=" forms-btn bg-[#f4f5f7]  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
                 <img src="./assets/bonus1.png" alt="">
-                <p class="text-[#08080880]">Get Bonus</p>
+                <p class="text-black font-semibold">Get Bonus</p>
 
             </div>
             <!-- cart-5 -->
-            <div class=" bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+            <div id="pay-button" class=" forms-btn bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
                 <img src="./assets/purse1.png" alt="">
-                <p class="text-[#08080880]">Pay Bill</p>
+                <p class="text-black font-semibold">Pay Bill</p>
 
             </div>
             <!-- cart-6 -->
-            <div class=" bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+            <div class=" forms-btn bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
                 <img src="./assets/transaction1.png" alt="">
-                <p class="text-[#08080880]"> Transaction</p>
+                <p class="text-black font-semibold"> Transaction</p>
 
             </div>
 
@@ -86,7 +89,7 @@
     <!-- events section -->
     <div class="all-from-sections">
         <!-- add money section -->
-        <div id="add-money-parent" style="display: none;">
+        <div class="events forms-btn" id="add-money-parent">
             <h1 class="pl-5 font-bold text-xl">Add money</h1>
             <form class="p-8 bg-white m-5 rounded-xl ">
                 <div>
@@ -122,7 +125,7 @@
         </div>
 
         <!-- cashout section -->
-        <div id="cash-out-parent" style="display:none">
+        <div class="events " id="cash-out-parent">
             <h1 class="pl-5 font-bold text-xl">Cash Out</h1>
             <form class="p-8 bg-white m-5 rounded-xl">
                 <div class="flex flex-col">
@@ -149,8 +152,9 @@
             </form>
 
         </div>
+
         <!-- Transfer money Section -->
-        <div id="transfer-container">
+        <div class="events " id="transfer-container">
             <h1 class="pl-5 font-bold text-xl">Transfer Money</h1>
             <form class="p-8 bg-white m-5 rounded-xl">
                 <div class="flex flex-col">
@@ -172,12 +176,10 @@
                 </div>
                 <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="send-btn">Send Now</button>
             </form>
-
-
         </div>
 
         <!-- Get Bonus section -->
-        <div id="bonus-container">
+        <div class="events " id="bonus-container">
             <h1 class="pl-5 font-bold text-xl">Get Bonus 😊😍</h1>
             <form class="p-8 bg-white m-5 rounded-xl">
                 <div class="flex flex-col">
@@ -185,9 +187,46 @@
                     <input type="text" id="coupon-code-input" placeholder="Enter your Coupon"
                         class="input input-primary rounded-3xl mt-3" />
                 </div>
-                 <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="bonus-btn">Get Bonus</button>
-
+                <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="bonus-btn">Get Bonus</button>
+            </form>
         </div>
+
+        <!-- pay bill section -->
+        <div class="events " id="pay-bill-container">
+            <h1 class="pl-5 font-bold text-xl">Pay Bill</h1>
+            <form class="p-8 bg-white m-5 rounded-xl ">
+                <div>
+                    <label for="biller-type" class="font-bold">Select To Pay</label>
+                    <select id="biller-type" name="biller-type" class="select select-primary w-full rounded-3xl mt-3">
+                        <option value="">Select to pay</option>
+                        <option value="water">Water</option>
+                        <option value="internet">Internet</option>
+                        <option value="gas">Gas</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3"> Biller Account Number</label>
+                    <input type="text" id="biller-acc-number" placeholder="Enter 11 Digit Bank Account Number"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Amount To Pay</label>
+                    <input id="add-amount" type="text" placeholder="Add Amount to Withdraw"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Pin Number</label>
+                    <input id="pay-pin" placeholder="Enter your 4 Digit Pin"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <button type="button" id="pay-btn" class="btn btn-outline btn-primary w-full mt-5">Pay Now</button>
+            </form>
+        </div>
+
     </div>
 
     <script src="./home.js"></script>
