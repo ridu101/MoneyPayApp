@@ -2,6 +2,7 @@
 const validNumber = 8801878710317;
 const validPin = 3119;
 const bonusCode = 'hiya50'
+const transactionData = [];
 
 function getAmountValue(id) {
     const value = document.getElementById(id).value;
@@ -44,6 +45,39 @@ function activateStyle(id) {
     document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f230]");
 
 }
+
+//****************** */ transaction section features showing ****************
+
+document.getElementById('transaction-btn')
+    .addEventListener('click', function () {
+        const transactionCartContainer = document.getElementById('transaction-cart-container');
+
+        transactionCartContainer.innerText = "";
+
+        for (const data of transactionData) {
+            const div = document.createElement("div")
+            div.innerHTML = `
+        
+                <div class="border-2 bg-white rounded-xl flex items-center justify-between  p-2 ">
+                        <div class="flex items-center  gap-2 mt-3">
+                            <div class="p-2 rounded-full bg-[#f4f5f7]">
+                                <img src="./assets/transaction1.png" alt="">
+                            </div>
+                            <div>
+                                <h1>${data.name}</h1>
+                                <p>${data.date}</p>
+                            </div>
+
+                        </div>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+        `
+            transactionCartContainer.appendChild(div)
+
+        }
+    })
+
+    //************************************************************************************************** */ 
 // toggling feature
 document.getElementById('add-money-btn')
     .addEventListener('click', function () {
@@ -76,6 +110,12 @@ document.getElementById('pay-button')
         handleToggle('pay-bill-container');
         activateStyle('pay-button');
     })
+document.getElementById('transaction-btn')
+    .addEventListener('click', function () {
+        handleToggle('transaction-container');
+        activateStyle('transaction-btn');
+    })
+
 
 //  add button event handler
 document.getElementById('btn-add')
@@ -97,8 +137,14 @@ document.getElementById('btn-add')
         const availableBalance = parseInt(document.getElementById('avail-balance').innerText);
         const totalBalance = amountNumber + availableBalance;
         document.getElementById('avail-balance').innerText = totalBalance;
-        document.getElementById('add-money-modal').checked= true;
-
+        document.getElementById('add-money-modal').checked = true;
+        // transaction Showing
+        const data = {
+            name: "add money",
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(data);
+        console.log(transactionData)
 
     })
 
@@ -125,7 +171,14 @@ document.getElementById('withdraw-btn')
         const amountAfterWithdraw = availableBalance - withdrawAmount;
 
         document.getElementById('avail-balance').innerText = amountAfterWithdraw;
-        document.getElementById('cash-out-modal').checked= true;
+        document.getElementById('cash-out-modal').checked = true;
+        // transaction showing
+        const data = {
+            name: "Cash out",
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(data);
+        console.log(transactionData);
     })
 
 // send now button event handler
@@ -134,7 +187,7 @@ document.getElementById('send-btn').addEventListener('click', function () {
     const availableBalance = parseInt(document.getElementById('avail-balance').innerText);
     const transferAmount = getAmountValue('transfer-amount');
     const accountNumber = getAccountNumber('user-number');
-    const pinNumber = getPinValue('pin-number-transfer'); // correct id
+    const pinNumber = getPinValue('pin-number-transfer');
 
     if (accountNumber != validNumber) {
         alert('Enter valid account Number');
@@ -152,6 +205,13 @@ document.getElementById('send-btn').addEventListener('click', function () {
     const amountAfterTransfer = availableBalance - transferAmount;
     document.getElementById('avail-balance').innerText = amountAfterTransfer;
     document.getElementById('transfer-modal').checked = true;
+    // transaction Showing
+    const data = {
+        name: "Transfer Money",
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data);
+    console.log(transactionData)
 })
 
 // get bonus button event handler
@@ -170,6 +230,13 @@ document.getElementById('bonus-btn')
         else {
             alert('⚠️Enter Correct Coupon Code !!')
         }
+        // transaction Showing
+        const data = {
+            name: "Bonus Get",
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(data);
+        console.log(transactionData)
     })
 
 // payNow button event handler
@@ -194,5 +261,12 @@ document.getElementById('pay-btn')
 
         document.getElementById('avail-balance').innerText = amountAfterPay;
         document.getElementById('payment-modal').checked = true;
+        // transaction Showing
+        const data = {
+            name: "Pay Bill",
+            date: new Date().toLocaleTimeString()
+        }
+        transactionData.push(data);
+        console.log(transactionData)
 
     })

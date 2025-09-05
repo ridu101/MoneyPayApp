@@ -78,7 +78,8 @@
 
             </div>
             <!-- cart-6 -->
-            <div class=" forms-btn bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+            <div id="transaction-btn"
+                class=" forms-btn bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
                 <img src="./assets/transaction1.png" alt="">
                 <p class="text-black font-semibold"> Transaction</p>
 
@@ -123,7 +124,7 @@
                 </div>
                 <button type="button" id="btn-add" class="btn btn-outline btn-primary w-full mt-5">Add Money</button>
             </form>
-            
+
             <input type="checkbox" id="add-money-modal" class="modal-toggle" />
             <div class="modal">
                 <div class="modal-box">
@@ -288,8 +289,19 @@
                 </div>
             </div>
         </div>
+        <!-- transaction section -->
+        <div class="form" id="transaction-container">
+            <div class="flex justify-between items-center m">
+                <h1 class="pl-5 font-bold text-xl">Transaction</h1>
+                <p class="mr-8 text-[#08080880] ">View All</p>
+            </div>
+            <div>
+                <div class="p-5" id="transaction-cart-container">
+                    
+                </div>
+            </div>
 
-
+        </div>
     </div>
 
     <script src="./home.js"></script>
