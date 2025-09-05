@@ -32,16 +32,16 @@ function handleToggle(id) {
 }
 
 // activation button style function
-function activateStyle(id){
+function activateStyle(id) {
 
-   const fromBtn = document.getElementsByClassName('forms-btn');
-        for (const btn of fromBtn) {
-            btn.classList.remove("border-[#0874f2]", "bg-[#0874f230]");
-            btn.classList.add("border-[#0874f20d]", "bg-[#f4f5f7]");
-        }
+    const fromBtn = document.getElementsByClassName('forms-btn');
+    for (const btn of fromBtn) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f230]");
+        btn.classList.add("border-[#0874f20d]", "bg-[#f4f5f7]");
+    }
 
-        document.getElementById(id).classList.remove("border-[#0874f20d]", "bg-[#f4f5f7]");
-        document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f230]");
+    document.getElementById(id).classList.remove("border-[#0874f20d]", "bg-[#f4f5f7]");
+    document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f230]");
 
 }
 // toggling feature
@@ -49,7 +49,7 @@ document.getElementById('add-money-btn')
     .addEventListener('click', function () {
         handleToggle('add-money-parent')
         activateStyle('add-money-btn');
-        
+
     })
 
 document.getElementById('cash-out-btn')
@@ -57,24 +57,24 @@ document.getElementById('cash-out-btn')
         handleToggle('cash-out-parent')
         activateStyle('cash-out-btn');
 
-       
+
     })
 
 document.getElementById('transfer-btn')
     .addEventListener('click', function () {
         handleToggle('transfer-container')
-         activateStyle('transfer-btn');
+        activateStyle('transfer-btn');
 
     })
 document.getElementById('get-bonus-btn')
     .addEventListener('click', function () {
         handleToggle('bonus-container');
-         activateStyle('get-bonus-btn');
+        activateStyle('get-bonus-btn');
     })
 document.getElementById('pay-button')
     .addEventListener('click', function () {
         handleToggle('pay-bill-container');
-         activateStyle('pay-button');
+        activateStyle('pay-button');
     })
 
 //  add button event handler
@@ -124,6 +124,7 @@ document.getElementById('withdraw-btn')
         const amountAfterWithdraw = availableBalance - withdrawAmount;
 
         document.getElementById('avail-balance').innerText = amountAfterWithdraw;
+        document.getElementById('cash-out-modal').checked= true;
     })
 
 // send now button event handler
@@ -149,7 +150,8 @@ document.getElementById('send-btn').addEventListener('click', function () {
 
     const amountAfterTransfer = availableBalance - transferAmount;
     document.getElementById('avail-balance').innerText = amountAfterTransfer;
-});
+    document.getElementById('transfer-modal').checked = true;
+})
 
 // get bonus button event handler
 document.getElementById('bonus-btn')
@@ -162,8 +164,34 @@ document.getElementById('bonus-btn')
             const totalBonus = newBalance / 100;
             const afterBonusTotalAmount = availableBalance + totalBonus;
             document.getElementById('avail-balance').innerText = afterBonusTotalAmount;
+            document.getElementById('bonus-modal').checked = true;
         }
         else {
             alert('⚠️Enter Correct Coupon Code !!')
         }
+    })
+
+// payNow button event handler
+document.getElementById('pay-btn')
+    .addEventListener('click', function () {
+        const availableBalance = parseInt(document.getElementById('avail-balance').innerText)
+        const payAmount = getAmountValue('pay-amount');
+        const payAccountNumber = getAccountNumber('biller-acc-number');
+        const pinNumber = getPinValue('pay-pin');
+
+        if (payAccountNumber != validNumber) {
+            alert('Enter valid account Number')
+        }
+        if (pinNumber != validPin) {
+            alert('Enter valid pin')
+        }
+        if (availableBalance < payAmount) {
+            alert('Insufficient Balance');
+            return;
+        }
+        const amountAfterPay = availableBalance - payAmount;
+
+        document.getElementById('avail-balance').innerText = amountAfterPay;
+        document.getElementById('payment-modal').checked = true;
+
     })
