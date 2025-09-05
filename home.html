@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainPage</title>
+    <link rel="shortcut icon" href="assets/733317.png" type="image/x-icon">
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- DaisyUI full CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- font awesome kit -->
+    <script src="https://kit.fontawesome.com/7a5cb3f7b6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-[#f4f5f7] max-w-lg mx-auto p-2">
+    <nav class="border-2 p-3 min-h-[50px] flex items-center justify-between mb-10 bg-white">
+        <div class="flex items-center">
+            <img src="./assets/Group.png" alt="">
+            <div>
+                <h2 class="text-black font-bold">$ <span id="avail-balance" class="font-bold">50000</span></h2>
+                <p class="text-[#08080880]">Available Balance</p>
+            </div>
+        </div>
+        <div>
+            <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
+            <button class="btn btn-outline btn-primary ">Logout</button>
+
+        </div>
+    </nav>
+    <!-- welcome to MoneyPay section -->
+    <div class="p-5">
+        <h1 class=" text-black font-bold text-[25px] ">🔥Welcome To MoneyPay!</h1>
+        <p class=" text-[#08080880]"> Enjoy easy and convenient financial services with us. <br> Cashout charge is low
+        </p>
+    </div>
+
+    <div class="p-5">
+        <div class="grid grid-cols-3 gap-4 mt-10 bg-white rounded-xl p-3">
+            <!--cart-1  -->
+            <div id="add-money-btn" class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+                <img class="mx-auto" src="./assets/wallet1.png" alt="">
+                <p class="text-[#08080880] ">Add Money</p>
+
+            </div>
+            <!-- cart-2 -->
+            <div id="cash-out-btn" class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+                <img src="./assets/send1.png" alt="">
+                <p class="text-[#08080880]">Cashout</p>
+
+            </div>
+            <!-- cart-3 -->
+            <div class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+                <img src="./assets/money1.png" alt="">
+                <p class="text-[#08080880]">TransferMoney</p>
+
+            </div>
+            <!-- cart-4 -->
+            <div class=" bg-[#f4f5f7]  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+                <img src="./assets/bonus1.png" alt="">
+                <p class="text-[#08080880]">Get Bonus</p>
+
+            </div>
+            <!-- cart-5 -->
+            <div class=" bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+                <img src="./assets/purse1.png" alt="">
+                <p class="text-[#08080880]">Pay Bill</p>
+
+            </div>
+            <!-- cart-6 -->
+            <div class=" bg-[#f4f5f7] items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+                <img src="./assets/transaction1.png" alt="">
+                <p class="text-[#08080880]"> Transaction</p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- events section -->
+    <div class="all-from-sections">
+        <!-- add money section -->
+        <div id="add-money-parent" style="display: none;">
+            <h1 class="pl-5 font-bold text-xl">Add money</h1>
+            <form class="p-8 bg-white m-5 rounded-xl ">
+                <div>
+                    <label for="bank" class="font-bold ">Select a Bank</label>
+                    <select id="bank" class="select select-primary w-full rounded-3xl mt-3">
+                        <option disabled selected>Select a Bank</option>
+                        <option>DBBL</option>
+                        <option>Bikash</option>
+                        <option>Pubali Bank</option>
+                    </select>
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3"> Bank Account Number</label>
+                    <input type="text" id="bank-account-number" placeholder="Enter 11 Digit Bank Account Number"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Amount To Add</label>
+                    <input id="add-amount" type="text" placeholder="Add Amount to Withdraw"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Pin Number</label>
+                    <input id="pin-number" placeholder="Enter your 4 Digit Pin"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <button type="button" id="btn-add" class="btn btn-outline btn-primary w-full mt-5">Add Money</button>
+            </form>
+        </div>
+
+        <!-- cashout section -->
+        <div id="cash-out-parent" style="display:none">
+             <h1 class="pl-5 font-bold text-xl">Cash Out</h1>
+             <form class="p-8 bg-white m-5 rounded-xl">
+                 <div class="flex flex-col">
+                    <label class="font-semibold ">Agent Number</label>
+                    <input type="text" id="bank-number" placeholder="Enter 11 agent number"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Amount</label>
+                    <input id="with-amount" type="text" placeholder="Enter Amount to Withdraw"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Pin Number</label>
+                    <input id="pin-number-withdraw" placeholder="Enter your 4 Digit Pin"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="withdraw-btn">Withdraw Money</button>
+
+             </form>
+
+        </div>
+
+    </div>
+
+    <script src="./home.js"></script>
+
+
+</body>
+
+</html>
