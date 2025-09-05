@@ -1,5 +1,7 @@
+// pre declared number, pin, bonus 
 const validNumber = 8801878710317;
 const validPin = 3119;
+const bonusCode= 'hiya50'
 
 function getAmountValue(id) {
     const value = document.getElementById(id).value;
@@ -51,6 +53,7 @@ document.getElementById('add-money-btn')
     .addEventListener('click', function () {
         document.getElementById('cash-out-parent').style.display = 'none';
         document.getElementById('transfer-container').style.display = 'none';
+        document.getElementById('bonus-container').style.display='none';
         document.getElementById('add-money-parent').style.display = 'block';
 
     })
@@ -58,6 +61,7 @@ document.getElementById('cash-out-btn')
     .addEventListener('click', function () {
         document.getElementById('add-money-parent').style.display = 'none';
         document.getElementById('transfer-container').style.display = 'none';
+        document.getElementById('bonus-container').style.display='none';
         document.getElementById('cash-out-parent').style.display = 'block';
 
     })
@@ -67,7 +71,15 @@ document.getElementById('transfer-btn')
 
         document.getElementById('cash-out-parent').style.display = 'none';
         document.getElementById('add-money-parent').style.display = 'none';
+        document.getElementById('bonus-container').style.display='none';
         document.getElementById('transfer-container').style.display = 'block';
+    })
+document.getElementById('get-bonus-btn')
+    .addEventListener('click', function () {
+        document.getElementById('cash-out-parent').style.display = 'none';
+        document.getElementById('add-money-parent').style.display = 'none';
+        document.getElementById('transfer-container').style.display = 'none';
+        document.getElementById('bonus-container').style.display='block';
     })
 
 // withdraw button event handler
@@ -95,7 +107,7 @@ document.getElementById('withdraw-btn')
     })
 // send now button event handler
 
-document.getElementById('send-btn').addEventListener('click', function(){
+document.getElementById('send-btn').addEventListener('click', function () {
     const availableBalance = parseInt(document.getElementById('avail-balance').innerText);
     const transferAmount = getAmountValue('transfer-amount');
     const accountNumber = getAccountNumber('user-number');
@@ -117,3 +129,20 @@ document.getElementById('send-btn').addEventListener('click', function(){
     const amountAfterTransfer = availableBalance - transferAmount;
     document.getElementById('avail-balance').innerText = amountAfterTransfer;
 });
+
+// get bonus button event handler
+    document.getElementById('bonus-btn')
+        .addEventListener('click', function(){
+            const availableBalance= parseInt(document.getElementById('avail-balance').innerText);
+            const couponInput= document.getElementById('coupon-code-input').value;
+            
+            if (couponInput=== bonusCode){
+                const newBalance= availableBalance *50;
+                const totalBonus=newBalance/100;
+                const afterBonusTotalAmount= availableBalance+totalBonus;
+                document.getElementById('avail-balance').innerText= afterBonusTotalAmount;
+            }
+            else{
+                alert('⚠️Enter Correct Coupon Code !!')
+            }
+        })

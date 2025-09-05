@@ -21,7 +21,8 @@
         <div class="flex items-center">
             <img src="./assets/Group.png" alt="">
             <div>
-                <h2 class="font-bold text-green-600 text-[25px] ">$ <span id="avail-balance" class="font-bold text-blue-600 text-[25px]">50000</span></h2>
+                <h2 class="font-bold text-green-600 text-[25px] ">$ <span id="avail-balance"
+                        class="font-bold text-blue-600 text-[25px]">50000</span></h2>
                 <p class="text-[#08080880] ">Available Balance</p>
             </div>
         </div>
@@ -41,13 +42,15 @@
     <div class="p-5">
         <div class="grid grid-cols-3 gap-4 mt-10 bg-white rounded-xl p-3">
             <!--cart-1  -->
-            <div id="add-money-btn" class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+            <div id="add-money-btn"
+                class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
                 <img class="mx-auto" src="./assets/wallet1.png" alt="">
                 <p class="text-[#08080880] ">Add Money</p>
 
             </div>
             <!-- cart-2 -->
-            <div id="cash-out-btn" class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+            <div id="cash-out-btn"
+                class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
                 <img src="./assets/send1.png" alt="">
                 <p class="text-[#08080880]">Cashout</p>
 
@@ -59,7 +62,7 @@
 
             </div>
             <!-- cart-4 -->
-            <div class=" bg-[#f4f5f7]  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
+            <div id="get-bonus-btn" class=" bg-[#f4f5f7]  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl">
                 <img src="./assets/bonus1.png" alt="">
                 <p class="text-[#08080880]">Get Bonus</p>
 
@@ -120,9 +123,9 @@
 
         <!-- cashout section -->
         <div id="cash-out-parent" style="display:none">
-             <h1 class="pl-5 font-bold text-xl">Cash Out</h1>
-             <form class="p-8 bg-white m-5 rounded-xl">
-                 <div class="flex flex-col">
+            <h1 class="pl-5 font-bold text-xl">Cash Out</h1>
+            <form class="p-8 bg-white m-5 rounded-xl">
+                <div class="flex flex-col">
                     <label class="font-semibold ">Agent Number</label>
                     <input type="text" id="bank-number" placeholder="Enter 11 agent number"
                         class="input input-primary rounded-3xl mt-3" />
@@ -140,16 +143,17 @@
                         class="input input-primary rounded-3xl mt-3" />
 
                 </div>
-                <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="withdraw-btn">Withdraw Money</button>
+                <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="withdraw-btn">Withdraw
+                    Money</button>
 
-             </form>
+            </form>
 
         </div>
         <!-- Transfer money Section -->
-         <div id="transfer-container">
+        <div id="transfer-container">
             <h1 class="pl-5 font-bold text-xl">Transfer Money</h1>
-             <form class="p-8 bg-white m-5 rounded-xl">
-                 <div class="flex flex-col">
+            <form class="p-8 bg-white m-5 rounded-xl">
+                <div class="flex flex-col">
                     <label class="font-semibold ">User Account Number</label>
                     <input type="text" id="user-number" placeholder="Enter 11 digit user number"
                         class="input input-primary rounded-3xl mt-3" />
@@ -166,14 +170,24 @@
                     <input id="pin-number-transfer" placeholder="Enter your 4 Digit Pin"
                         class="input input-primary rounded-3xl mt-3" />
                 </div>
-                 <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="send-btn">Send Now</button>
+                <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="send-btn">Send Now</button>
+            </form>
 
 
-         </div>
+        </div>
 
-         
+        <!-- Get Bonus section -->
+        <div id="bonus-container">
+            <h1 class="pl-5 font-bold text-xl">Get Bonus 😊😍</h1>
+            <form class="p-8 bg-white m-5 rounded-xl">
+                <div class="flex flex-col">
+                    <label class="font-semibold ">Enter Bonus Coupon</label>
+                    <input type="text" id="coupon-code-input" placeholder="Enter your Coupon"
+                        class="input input-primary rounded-3xl mt-3" />
+                </div>
+                 <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="bonus-btn">Get Bonus</button>
 
-
+        </div>
     </div>
 
     <script src="./home.js"></script>
