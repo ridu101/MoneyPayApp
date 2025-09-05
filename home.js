@@ -97,6 +97,7 @@ document.getElementById('btn-add')
         const availableBalance = parseInt(document.getElementById('avail-balance').innerText);
         const totalBalance = amountNumber + availableBalance;
         document.getElementById('avail-balance').innerText = totalBalance;
+        document.getElementById('add-money-modal').checked= true;
 
 
     })
@@ -109,7 +110,7 @@ document.getElementById('withdraw-btn')
         const availableBalance = parseInt(document.getElementById('avail-balance').innerText)
         const withdrawAmount = getAmountValue('with-amount');
         const accountNumber = getAccountNumber('bank-number');
-        const pinNumber = getPinValue('pin-number');
+        const pinNumber = getPinValue('pin-number-withdraw');
 
         if (accountNumber != validNumber) {
             alert('Enter valid account Number')

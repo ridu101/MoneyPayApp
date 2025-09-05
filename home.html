@@ -123,47 +123,64 @@
                 </div>
                 <button type="button" id="btn-add" class="btn btn-outline btn-primary w-full mt-5">Add Money</button>
             </form>
+            
+            <input type="checkbox" id="add-money-modal" class="modal-toggle" />
+            <div class="modal">
+                <div class="modal-box">
+                    <h3 class="font-bold text-lg">Add money Successful✅</h3>
+                    <p class="py-4">Your add money has been completed successfully.</p>
+                    <div class="modal-action">
+                        <label for="add-money-modal" class="btn btn-primary">Close</label>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- cashout section -->
-        <div class="events " id="cash-out-parent">
+        <div class="events" id="cash-out-parent">
             <h1 class="pl-5 font-bold text-xl">Cash Out</h1>
             <form class="p-8 bg-white m-5 rounded-xl">
+                <!-- Agent Number -->
                 <div class="flex flex-col">
-                    <label class="font-semibold ">Agent Number</label>
+                    <label for="bank-number" class="font-semibold">Agent Number</label>
                     <input type="text" id="bank-number" placeholder="Enter 11 agent number"
                         class="input input-primary rounded-3xl mt-3" />
-
                 </div>
-                <div class="flex flex-col">
-                    <label class="font-semibold mt-3">Amount</label>
-                    <input id="with-amount" type="text" placeholder="Enter Amount to Withdraw"
+
+                <!-- Amount -->
+                <div class="flex flex-col mt-4">
+                    <label for="with-amount" class="font-semibold">Amount</label>
+                    <input type="text" id="with-amount" placeholder="Enter Amount to Withdraw"
                         class="input input-primary rounded-3xl mt-3" />
-
                 </div>
-                <div class="flex flex-col">
-                    <label class="font-semibold mt-3">Pin Number</label>
-                    <input id="pin-number-withdraw" placeholder="Enter your 4 Digit Pin"
+
+                <!-- Pin Number -->
+                <div class="flex flex-col mt-4">
+                    <label for="pin-number-withdraw" class="font-semibold">Pin Number</label>
+                    <input type="text" id="pin-number-withdraw" placeholder="Enter your 4 Digit Pin"
                         class="input input-primary rounded-3xl mt-3" />
-
                 </div>
-                <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="withdraw-btn">Withdraw
-                    Money</button>
 
+                <!-- Withdraw Button -->
+                <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="withdraw-btn">
+                    Withdraw Money
+                </button>
             </form>
-            <!-- cash out modal -->
-             <input type="checkbox" id="cash-out-modal" class="modal-toggle" />
+
+            <!-- Cash Out Modal -->
+            <input type="checkbox" id="cash-out-modal" class="modal-toggle" />
             <div class="modal">
                 <div class="modal-box">
-                    <h3 class="font-bold text-lg">Cash Out Successful✅</h3>
+                    <h3 class="font-bold text-lg">Cash Out Successful ✅</h3>
                     <p class="py-4">Your cash out has been completed successfully.</p>
                     <div class="modal-action">
                         <label for="cash-out-modal" class="btn btn-primary">Close</label>
                     </div>
                 </div>
             </div>
-
         </div>
+
 
         <!-- Transfer money Section -->
         <div class="events " id="transfer-container">
