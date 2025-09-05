@@ -268,3 +268,9 @@ document.getElementById('pay-btn')
         console.log(transactionData)
 
     })
+
+    // logout button functionality
+    document.getElementById('logout-btn')
+        .addEventListener('click', function(){
+            window.location.href= "./index.html"
+        })
