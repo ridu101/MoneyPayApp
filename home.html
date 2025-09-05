@@ -21,8 +21,8 @@
         <div class="flex items-center">
             <img src="./assets/Group.png" alt="">
             <div>
-                <h2 class="text-black font-bold">$ <span id="avail-balance" class="font-bold">50000</span></h2>
-                <p class="text-[#08080880]">Available Balance</p>
+                <h2 class="font-bold text-green-600 text-[25px] ">$ <span id="avail-balance" class="font-bold text-blue-600 text-[25px]">50000</span></h2>
+                <p class="text-[#08080880] ">Available Balance</p>
             </div>
         </div>
         <div>
@@ -53,7 +53,7 @@
 
             </div>
             <!-- cart-3 -->
-            <div class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
+            <div id="transfer-btn" class="  items-center flex flex-col p-5 border-2 border-[#0874f20d] rounded-xl bg-[#f4f5f7]">
                 <img src="./assets/money1.png" alt="">
                 <p class="text-[#08080880]">TransferMoney</p>
 
@@ -145,6 +145,34 @@
              </form>
 
         </div>
+        <!-- Transfer money Section -->
+         <div id="transfer-container">
+            <h1 class="pl-5 font-bold text-xl">Transfer Money</h1>
+             <form class="p-8 bg-white m-5 rounded-xl">
+                 <div class="flex flex-col">
+                    <label class="font-semibold ">User Account Number</label>
+                    <input type="text" id="user-number" placeholder="Enter 11 digit user number"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Amount</label>
+                    <input id="transfer-amount" type="text" placeholder="Enter Amount to transfer"
+                        class="input input-primary rounded-3xl mt-3" />
+
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-semibold mt-3">Pin Number</label>
+                    <input id="pin-number-transfer" placeholder="Enter your 4 Digit Pin"
+                        class="input input-primary rounded-3xl mt-3" />
+                </div>
+                 <button type="button" class="btn btn-outline btn-primary w-full mt-5" id="send-btn">Send Now</button>
+
+
+         </div>
+
+         
+
 
     </div>
 
