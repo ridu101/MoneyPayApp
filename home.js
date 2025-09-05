@@ -47,7 +47,6 @@ function activateStyle(id) {
 }
 
 //****************** */ transaction section features showing ****************
-
 document.getElementById('transaction-btn')
     .addEventListener('click', function () {
         const transactionCartContainer = document.getElementById('transaction-cart-container');
@@ -58,8 +57,8 @@ document.getElementById('transaction-btn')
             const div = document.createElement("div")
             div.innerHTML = `
         
-                <div class="border-2 bg-white rounded-xl flex items-center justify-between  p-2 ">
-                        <div class="flex items-center  gap-2 mt-3">
+                <div class="border-2 bg-white rounded-xl flex items-center justify-between  p-2 mt-3 ">
+                        <div class="flex items-center  gap-2 ">
                             <div class="p-2 rounded-full bg-[#f4f5f7]">
                                 <img src="./assets/transaction1.png" alt="">
                             </div>
@@ -77,7 +76,7 @@ document.getElementById('transaction-btn')
         }
     })
 
-    //************************************************************************************************** */ 
+    // 
 // toggling feature
 document.getElementById('add-money-btn')
     .addEventListener('click', function () {
