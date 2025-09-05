@@ -2,21 +2,29 @@ const validNumber = 8801878710317;
 const validPin = 3119;
 
 function getAmountValue(id){
-    const inputFiled= document.getElementById(id);
-    const inputFiledValue= inputFiled.value;
-    const inputFieldValueNumber= parseInt(inputFiledValue);
-    return inputFieldValueNumber;
+    const amountEntered= parseInt(document.getElementById(id).value);
+    return amountEntered;
 
 }
 
+function getPinValue (id){
+   
+    const pinEntered= parseInt(document.getElementById(id).value);
+    return pinEntered;
+}
+function getAccountNumber(id){
+    const accountNumberEntered= parseInt(document.getElementById(id).value);
+    return accountNumberEntered;
+
+}
 
 document.getElementById('btn-add')
     .addEventListener('click', function (e) {
         e.preventDefault()
         const bank = document.getElementById('bank').value;
-        const accountNumber = parseInt(document.getElementById('bank-account-number').value);
+        const accountNumber =getAccountNumber('bank-account-number');
         const amountNumber =getAmountValue('add-amount');
-        const pinNumber = parseInt(document.getElementById('pin-number').value);
+        const pinNumber = getPinValue('pin-number');
 
         if (accountNumber != validNumber) {
             alert('Provide Correct Number')
@@ -55,8 +63,9 @@ document.getElementById('withdraw-btn')
     .addEventListener('click', function () {
         const availableBalance = parseInt(document.getElementById('avail-balance').innerText)
         const withdrawAmount = getAmountValue('with-amount');
-        const accountNumber = parseInt(document.getElementById('bank-number').value)
-        const pinNumber = parseInt(document.getElementById('pin-number-withdraw').value );
+        const accountNumber = getAccountNumber('bank-number');
+        const pinNumber = getPinValue('pin-number');
+
         if (accountNumber != validNumber) {
             alert('Enter valid account Number')
         }
