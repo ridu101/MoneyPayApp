@@ -158,9 +158,11 @@ document.getElementById('withdraw-btn')
 
         if (accountNumber != validNumber) {
             alert('Enter valid account Number')
+            return ;
         }
         if (pinNumber != validPin) {
             alert('Enter valid pin')
+            return ;
         }
         if (availableBalance < withdrawAmount) {
             alert('Insufficient Balance');
@@ -247,9 +249,11 @@ document.getElementById('pay-btn')
 
         if (payAccountNumber != validNumber) {
             alert('Enter valid account Number')
+            return ;
         }
         if (pinNumber != validPin) {
             alert('Enter valid pin')
+            return;
         }
         if (availableBalance < payAmount) {
             alert('Insufficient Balance');
